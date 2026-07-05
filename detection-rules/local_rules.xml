@@ -1,0 +1,70 @@
+<group name="local,windows,">
+
+  <!-- Rule 1 - Multiple Failed Windows Logins -->
+  <rule id="100100" level="10" frequency="5" timeframe="60">
+    <if_matched_sid>60122</if_matched_sid>
+    <description>Multiple Windows failed logins detected (Possible Brute Force)</description>
+    <mitre>
+      <id>T1110</id>
+    </mitre>
+  </rule>
+
+  <!-- Rule 2 - Encoded PowerShell -->
+  <rule id="100101" level="12">
+    <if_group>windows</if_group>
+    <field name="win.eventdata.commandLine">(?i)-EncodedCommand</field>
+    <description>Encoded PowerShell command detected</description>
+    <mitre>
+      <id>T1059.001</id>
+    </mitre>
+  </rule>
+
+  <!-- Rule 3 - New Administrator Account -->
+  <rule id="100102" level="12">
+    <if_sid>60103</if_sid>
+    <description>New administrator account created</description>
+    <mitre>
+      <id>T1136</id>
+    </mitre>
+  </rule>
+
+  <!-- Rule 4 - Possible Port Scan -->
+  <rule id="100103" level="10">
+    <if_group>sysmon_event3</if_group>
+    <description>Possible Port Scan detected</description>
+    <mitre>
+      <id>T1046</id>
+    </mitre>
+  </rule>
+
+  <!-- Rule 5 - Certutil Execution -->
+  <rule id="100104" level="12">
+    <if_group>windows</if_group>
+    <field name="win.eventdata.image">(?i)certutil.exe</field>
+    <description>Certutil execution detected</description>
+    <mitre>
+      <id>T1105</id>
+    </mitre>
+  </rule>
+
+  <!-- Rule 6 - Bitsadmin Execution -->
+  <rule id="100105" level="10">
+    <if_group>windows</if_group>
+    <field name="win.eventdata.image">(?i)bitsadmin.exe</field>
+    <description>Bitsadmin execution detected</description>
+    <mitre>
+      <id>T1197</id>
+    </mitre>
+  </rule>
+
+  <!-- Rule 7 - Rundll32 Execution -->
+  <rule id="100106" level="12">
+    <if_group>windows</if_group>
+    <field name="win.eventdata.image">(?i)rundll32.exe</field>
+    <description>Rundll32 execution detected</description>
+    <mitre>
+      <id>T1218.011</id>
+    </mitre>
+  </rule>
+
+</group>
