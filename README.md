@@ -69,16 +69,47 @@ The environment includes Windows Server 2022 monitored with Sysmon and Wazuh Age
 
 ```
 Enterprise-Log-Monitoring-System/
-
+│
+├── README.md
+├── LICENSE
+├── .gitignore
+│
 ├── architecture/
-│   ├── architecture-diagram.png
-│   └── architecture.md
+│   ├── architecture.md
+│   └── architecture-diagram.png
 │
 ├── dashboards/
 │   ├── soc-overview/
+│   │   ├── README.md
+│   │   ├── dashboard.png
+│   │   ├── total-alerts.png
+│   │   ├── alerts-timeline.png
+│   │   ├── top-alert-rules.png
+│   │   └── mitre-techniques.png
+│   │
 │   ├── authentication-monitoring/
+│   │   ├── README.md
+│   │   ├── dashboard.png
+│   │   ├── successful-logins.png
+│   │   ├── failed-logins.png
+│   │   ├── login-timeline.png
+│   │   └── authentication-events.png
+│   │
 │   ├── windows-security/
+│   │   ├── README.md
+│   │   ├── dashboard.png
+│   │   ├── process-creation.png
+│   │   ├── powershell-activity.png
+│   │   ├── network-connections.png
+│   │   └── sysmon-events.png
+│   │
 │   └── threat-detection/
+│       ├── README.md
+│       ├── dashboard.png
+│       ├── attack-timeline.png
+│       ├── custom-rules.png
+│       ├── critical-alerts.png
+│       └── recent-incidents.png
 │
 ├── detection-rules/
 │   ├── local_rules.xml
@@ -91,19 +122,15 @@ Enterprise-Log-Monitoring-System/
 │   ├── certutil.md
 │   └── rundll32.md
 │
-├── docs/
-│   ├── installation.md
-│   ├── windows-agent.md
-│   ├── sysmon.md
-│   ├── dashboards.md
-│   └── custom-rules.md
-│
-├── screenshots/
-│
-├── reports/
-│
-├── README.md
-└── LICENSE
+└──  docs/
+    ├── installation.md
+    ├── windows-agent.md
+    ├── sysmon.md
+    ├── dashboards.md
+    ├── custom-rules.md
+    └── project-structure.md
+
+
 ```
 
 ---
